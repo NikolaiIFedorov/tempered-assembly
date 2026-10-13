@@ -5,8 +5,13 @@
   "license": "ISC",
   "author": "",
   "type": "module",
+  "main": "dist/kernel.js",
+  "types": "dist/kernel.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "echo \"no build configured yet\" && exit 1"
+    "build": "mkdir -p dist && em++ kernel/main.cpp -o dist/kernel.js -O2 -lembind -sMODULARIZE -sEXPORT_ES6 -sEXPORT_NAME=createKernel -sENVIRONMENT=web,node --emit-tsd kernel.d.ts"
   },
   "keywords": []
 }
