@@ -11,7 +11,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "mkdir -p dist && em++ kernel/main.cpp -o dist/kernel.js -O2 -lembind -sMODULARIZE -sEXPORT_ES6 -sEXPORT_NAME=createKernel -sENVIRONMENT=web,node --emit-tsd kernel.d.ts"
+    "configure": "emcmake cmake -S . -B build -DCMAKE_BUILD_TYPE=Release",
+    "build": "npm run configure && emmake cmake --build build"
   },
   "keywords": []
 }

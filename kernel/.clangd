@@ -1,0 +1,5 @@
+CompileFlags:
+  CompilationDatabase: ../build
+  # The database names Emscripten's raw em++ script, which needs EMSDK_PYTHON.
+  # Homebrew's wrapper sets it, so clangd can ask it for the include paths.
+  Compiler: /opt/homebrew/bin/em++
